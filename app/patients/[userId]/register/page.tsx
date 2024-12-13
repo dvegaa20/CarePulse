@@ -29,7 +29,7 @@ export default async function Register({
         src="/assets/images/register-img.png"
         height={1000}
         width={1000}
-        alt="patiend"
+        alt="patient"
         className="side-img max-w-[390px]"
       />
     </div>

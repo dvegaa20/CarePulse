@@ -10,7 +10,7 @@ import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import { PatientFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
-import { createUser } from "@/lib/actions/patient.actions";
+import { registerPatient } from "@/lib/actions/patient.actions";
 import { FormFieldType } from "./PatientForm";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import {
@@ -23,7 +23,6 @@ import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
 import FileUploader from "../FileUploader";
-import { register } from "module";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -64,6 +63,7 @@ const RegisterForm = ({ user }: { user: User }) => {
         identificationDocument: formData,
       };
 
+      // @ts-ignore
       const patient = await registerPatient(patientData);
 
       if (patient) {
@@ -72,6 +72,8 @@ const RegisterForm = ({ user }: { user: User }) => {
     } catch (error) {
       console.error(error);
     }
+
+    setIsLoading(false);
   }
 
   return (
@@ -199,9 +201,9 @@ const RegisterForm = ({ user }: { user: User }) => {
         <CustomFormField
           fieldType={FormFieldType.SELECT}
           control={form.control}
-          name="primaryPhysician"
-          label="Primary Physician"
-          placeholder="Select a physician"
+          name="primaryPhyisician"
+          label="Primary Phyisician"
+          placeholder="Select a Phyisician"
         >
           {Doctors.map((doctor) => (
             <SelectItem key={doctor.name} value={doctor.name}>

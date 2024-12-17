@@ -8,7 +8,6 @@ import {
 } from "../appwrite.config";
 import { parseStringify } from "../utils";
 import { Appointment } from "@/types/appwrite.types";
-import { relative } from "path";
 import { revalidatePath } from "next/cache";
 
 export const createAppointment = async (

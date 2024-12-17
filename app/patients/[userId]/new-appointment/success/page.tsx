@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import { getAppointment } from "@/lib/actions/appointment.actions";
 import { Doctors } from "@/constants";
-import { format } from "path";
 import { formatDateTime } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 

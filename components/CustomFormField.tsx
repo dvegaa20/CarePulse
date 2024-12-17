@@ -1,14 +1,13 @@
 "use client";
 import {
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Control, Form } from "react-hook-form";
+import { Control } from "react-hook-form";
 import { FormFieldType } from "./forms/PatientForm";
 import { E164Number } from "libphonenumber-js/core";
 import Image from "next/image";
@@ -16,7 +15,6 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { render } from "react-dom";
 import { Select, SelectContent, SelectTrigger, SelectValue } from "./ui/select";
 import { Textarea } from "./ui/textarea";
 import { Checkbox } from "./ui/checkbox";
